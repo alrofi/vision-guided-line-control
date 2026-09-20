@@ -1,23 +1,23 @@
 # Vision-Guided Line Control (Cyber-Physical System)
 
-Sistema ciberfísico (CPS) en bucle cerrado para un robot móvil autónomo. Combina procesamiento de visión por computador en tiempo real (Transformada de Hough) sobre MATLAB/Simulink y firmware de bajo nivel en C++ alojado en un microcontrolador ESP32-S3.
+Closed-loop Cyber-Physical System (CPS) for an autonomous line-following mobile robot. It pairs low-level C++ firmware on an ESP32-S3 microcontroller with real-time computer vision in MATLAB/Simulink over a low-latency UDP stream. The vision pipeline processes incoming video through a dual approach: calculating centroid lateral displacement for immediate steering error, and applying a Hough Transform algorithm to estimate line geometry and angle for predictive curve detection, complete with real-time visual tracking overlays.
 
-## 🛠️ Arquitectura del Sistema
+## 🛠️ System architecture
 
-* **Hardware / Firmware:** ESP32-S3 (N16R8) con firmware en C++, streaming de vídeo UDP de baja latencia utilizando PSRAM (8 MB).
-* **Percepción (Simulink):** Pipeline dual de visión artificial (vía reactiva por centroide y vía predictiva mediante Transformada de Hough).
-* **Control:** Controlador PID lateral con Anti-Windup y control adaptativo de velocidad base (*Gain Scheduling*).
+* **Hardware / Firmware**: ESP32-S3 (N16R8) running C++ firmware, low-latency UDP video streaming using PSRAM (8 MB).
+* **Perception (Simulink):** Dual computer vision pipeline (reactive path via centroid and predictive path via Hough Transform).
+* **Control:** Lateral PID controller with Anti-Windup and adaptive base speed control (Gain Scheduling).
 
-## 📁 Estructura del Repositorio
+## 📁 Repository Structure
 
-* `firmware/`: Código C++ / Arduino para la ESP32-S3 (WiFi UDP & Camera Server).
-* `models/`: Modelos de simulación y control en Simulink (`.slx`).
-* `src/`: Scripts y funciones en MATLAB (`.m`) para el procesado de imagen.
-* `docs/`: Diagramas de bloques y documentación técnica del TFG.
-* `images/`: Capturas y gráficos de resultados.
+* `firmware/`: C++ / Arduino code for the ESP32-S3 (WiFi UDP & Camera Server).
+* `models/`: Simulation and control models in Simulink (.slx).
+* `src/`: MATLAB scripts and functions (.m) for image processing.
+* `docs/`: Currently empty but created to add block diagrams and technical documentation for the Bachelor's Thesis (TFG).
+* `images/`: Screenshots and result plots.
 
-## 🚀 Requisitos y Uso
+## 🚀 Requirements and Usage
 
-1. Cargar el firmware de `firmware/` en la ESP32-S3.
-2. Conectar la ESP32-S3 y la estación de control a la misma red UDP.
-3. Ejecutar el modelo principal en Simulink alojado en `models/`.
+1. Flash the firmware from `firmware/` onto the ESP32-S3.
+2. Connect the ESP32-S3 and the control station to the same UDP network.
+3. Run the main Simulink model located in `models/`.
