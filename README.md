@@ -20,4 +20,4 @@ Closed-loop Cyber-Physical System (CPS) for an autonomous line-following mobile 
 
 1. Flash the firmware from `firmware/` onto the ESP32-S3.
 2. Connect the ESP32-S3 and the control station to the same UDP network.
-3. Run the main Simulink model located in `models/`.
+3. Run the main Simulink model located in `models/`. --> test_2.slx is a program that simulates the PID response from the servos and motors speed, but the main program is error_recta.slx
