@@ -11,11 +11,11 @@
 
 Servo MyServo;
 // Credencials Wi-Fi
-const char *ssid = "Passargada";
-const char *password = "sodeusfidequenga";
+const char *ssid = "*********;
+const char *password = ""*********;";
 
 // IP del teu PC (Substitueix per la IP que t'ha donat el comandament ipconfig)
-const char *udpAddress = "192.168.1.192"; 
+const char *udpAddress = "192.168.0.188"; 
 const int udpPort = 8888;
 const int pinGPIO14 = 14; // Canviar el número de pin
 const int pinServo = 1; // GPIO14 lliure de la teva ESP32-S3
